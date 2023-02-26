@@ -2,6 +2,7 @@ package model;
 
 //Represents a Pokemon with a name, one or two types, and stats (HP, attack, defense, special attack, special defense,
 // and speed)
+//All stats should be > 0
 public class Pokemon {
     private String name;
     private String type1;
