@@ -18,4 +18,6 @@ having to own a video game console.
 - As a user, I want to be able to delete *Pokémon* from my collection
 - As a user, I want to be able to view a summary of my *Pokémon* collection
 - As a user, I want to be able to select a *Pokémon* and edit its attributes
+- As a user, I want to be able to save my *Pokémon* collection, if I so choose
+- As a user, I want to be able to load my saved *Pokémon* collection, if I so choose
  
