@@ -1,9 +1,13 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 
 //Represents a list of Pokemon with unique names
-public class PokemonList {
+public class PokemonList implements Writable {
     private ArrayList<Pokemon> pokemons;
 
     public PokemonList() {
@@ -67,5 +71,25 @@ public class PokemonList {
         }
         result += pokemons.get(getSize() - 1);
         return result;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        // from JsonSerializationDemo
+        JSONObject json = new JSONObject();
+        json.put("pokemons", pokemonsToJson());
+        return json;
+    }
+
+    // EFFECTS: returns pokemons in list as a JSON array
+    private JSONArray pokemonsToJson() {
+        // from JsonSerializationDemo
+        JSONArray jsonArray = new JSONArray();
+
+        for (Pokemon p : pokemons) {
+            jsonArray.put(p.toJson());
+        }
+
+        return jsonArray;
     }
 }

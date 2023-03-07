@@ -1,9 +1,12 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 //Represents a Pokemon with a name, one or two types, and stats (HP, attack, defense, special attack, special defense,
 // and speed)
 //All stats should be > 0
-public class Pokemon {
+public class Pokemon implements Writable {
     private String name;
     private String type1;
     private String type2;
@@ -107,5 +110,22 @@ public class Pokemon {
         }
         return name + " | Type: " + type1 + "/" + type2 + " | HP: " + hp + " | Attack: " + atk + " | Defense: " + def
                 + " | Sp. Attack: " + spa + " | Sp. Def: " + spd + " | Speed: " + spe;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        // from JsonSerializationDemo
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("type1", type1);
+        json.put("type2", type2);
+        json.put("hp", hp);
+        json.put("atk", atk);
+        json.put("def", def);
+        json.put("spa", spa);
+        json.put("spd", spd);
+        json.put("spe", spe);
+
+        return json;
     }
 }

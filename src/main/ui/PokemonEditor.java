@@ -1,7 +1,11 @@
 package ui;
 
 import model.*;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -10,12 +14,17 @@ import java.util.Scanner;
 public class PokemonEditor {
     private PokemonList list;
     private Scanner scanner;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     private static final ArrayList<String> ATTRIBUTES
             = new ArrayList<>(Arrays.asList("name", "type1", "type2", "hp", "atk", "def", "spa", "spd", "spe"));
+    private static final String JSON_STORE = "./data/pokemonlist.json";
 
     //EFFECTS: runs the editor
     public PokemonEditor() {
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runEditor();
     }
 
@@ -49,6 +58,8 @@ public class PokemonEditor {
         System.out.println("\tv -> View your list of Pokemon");
         System.out.println("\te -> Edit an existing Pokemon");
         System.out.println("\td -> Delete a Pokemon");
+        System.out.println("\ts -> Save your list to file");
+        System.out.println("\tl -> Load your list from file");
         System.out.println("\tq -> Quit");
     }
 
@@ -75,6 +86,12 @@ public class PokemonEditor {
                 break;
             case "d":
                 delete();
+                break;
+            case "s":
+                save();
+                break;
+            case "l":
+                load();
                 break;
             default:
                 System.out.println("Please enter a valid input.");
@@ -150,6 +167,30 @@ public class PokemonEditor {
             System.out.println("Deleted " + select.getName() + ".");
         } else {
             System.out.println("You have no Pokemon.");
+        }
+    }
+
+    // EFFECTS: saves the pokemonlist to file
+    private void save() {
+        // code from JsonSerializationDemo
+        try {
+            jsonWriter.open();
+            jsonWriter.write(list);
+            jsonWriter.close();
+            System.out.println("Saved to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads pokemonlist from file
+    private void load() {
+        try {
+            list = jsonReader.read();
+            System.out.println("Loaded list from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
 
