@@ -1,0 +1,24 @@
+{"pokemons": [
+    {
+        "type2": "fire",
+        "def": 40,
+        "spa": 10,
+        "spd": 20,
+        "name": "hi",
+        "hp": 20,
+        "atk": 30,
+        "spe": 30,
+        "type1": "water"
+    },
+    {
+        "type2": "s",
+        "def": 50,
+        "spa": 30,
+        "spd": 40,
+        "name": "lol",
+        "hp": 10,
+        "atk": 20,
+        "spe": 20,
+        "type1": "h"
+    }
+]}

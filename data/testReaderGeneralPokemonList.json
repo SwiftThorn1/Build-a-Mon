@@ -1,0 +1,24 @@
+{"pokemons": [
+    {
+        "type2": "",
+        "def": 3,
+        "spa": 4,
+        "spd": 5,
+        "name": "test1",
+        "hp": 1,
+        "atk": 2,
+        "spe": 6,
+        "type1": "one"
+    },
+    {
+        "type2": "three",
+        "def": 4,
+        "spa": 5,
+        "spd": 6,
+        "name": "test2",
+        "hp": 2,
+        "atk": 3,
+        "spe": 7,
+        "type1": "two"
+    }
+]}
