@@ -48,7 +48,7 @@ public class JsonReader {
     }
 
     // MODIFIES: pl
-    // EFFECTS: parses pokemons from JSON object and adds them to workroom
+    // EFFECTS: parses pokemons from JSON object and adds them to given list
     private void addPokemons(PokemonList pl, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("pokemons");
         for (Object json : jsonArray) {
@@ -58,7 +58,7 @@ public class JsonReader {
     }
 
     // MODIFIES: pl
-    // EFFECTS: parses pokemon from JSON object and adds it to workroom
+    // EFFECTS: parses pokemon from JSON object and adds it to given list
     private void addPokemon(PokemonList pl, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         String type1 = jsonObject.getString("type1");
