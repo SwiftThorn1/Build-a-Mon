@@ -186,6 +186,7 @@ public class PokemonEditor {
     // MODIFIES: this
     // EFFECTS: loads pokemonlist from file
     private void load() {
+        // code from JsonSerializationDemo
         try {
             list = jsonReader.read();
             System.out.println("Loaded list from " + JSON_STORE);
