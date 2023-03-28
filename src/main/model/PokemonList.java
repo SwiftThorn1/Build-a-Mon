@@ -62,7 +62,6 @@ public class PokemonList implements Writable {
         return result;
     }
 
-    //REQUIRES: list not empty
     //EFFECTS: returns names and stats of Pokemon
     public String toString() {
         String result = "";
