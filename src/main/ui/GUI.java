@@ -77,12 +77,14 @@ public class GUI extends JFrame {
         setVisible(true);
     }
 
+    // MODIFIES: this
     // EFFECTS: creates main JPanel containing attribute fields and buttons
     private void setupMainPanel() {
         mainPanel = new JPanel();
         mainPanel.setLayout(new GridLayout(0, 3));
     }
 
+    // MODIFIES: this
     // EFFECTS: creates JPanel containing image and text area
     private void setupTextPanel() {
         textPanel = new JPanel();
@@ -93,6 +95,7 @@ public class GUI extends JFrame {
         textPanel.add(scrollPane, BorderLayout.SOUTH);
     }
 
+    // MODIFIES: this
     // EFFECTS: creates text area that displays Pokemon collection
     private void setupTextArea() {
         textArea = new JTextArea(4,20);
@@ -100,6 +103,7 @@ public class GUI extends JFrame {
         scrollPane = new JScrollPane(textArea);
     }
 
+    // MODIFIES: this
     // EFFECTS: creates JFrame that contains everything
     private void setupContainer() {
         container = new JPanel();
@@ -109,6 +113,7 @@ public class GUI extends JFrame {
         container.add(mainPanel, BorderLayout.SOUTH);
     }
 
+    // MODIFIES: this
     // EFFECTS: creates the add and remove buttons and adds them
     private void initializeAddAndRemove() {
         JButton addButton = new JButton("Add");
@@ -132,12 +137,14 @@ public class GUI extends JFrame {
         mainPanel.add(removeButton);
     }
 
+    // MODIFIES: this
     // EFFECTS: adds image to top of text panel
     private void addImage() {
         JLabel image = new JLabel(IMAGE_ICON);
         textPanel.add(image, BorderLayout.NORTH);
     }
 
+    // MODIFIES: this
     // EFFECTS: creates menu for saving and loading
     private void initializeMenu() {
         JMenuBar menuBar = new JMenuBar();
@@ -154,6 +161,7 @@ public class GUI extends JFrame {
         setJMenuBar(menuBar);
     }
 
+    // MODIFIES: this
     // EFFECTS: initializes fields that let user set attributes
     private void initializeAttributeFields() {
         nameField = new JTextField();
@@ -167,6 +175,7 @@ public class GUI extends JFrame {
         speField = new JTextField();
     }
 
+    // MODIFIES: this
     // EFFECTS: initializes labels with attributes
     private void initializeAttributeLabels() {
         nameLabel = new JLabel("Name");
@@ -180,6 +189,7 @@ public class GUI extends JFrame {
         speLabel = new JLabel("Speed");
     }
 
+    // MODIFIES: this
     // EFFECTS: adds each row of attributes
     private void addAttributeRows() {
         addAttributeRow(nameLabel, nameField);
@@ -193,6 +203,7 @@ public class GUI extends JFrame {
         addAttributeRow(speLabel, speField);
     }
 
+    // MODIFIES: this
     // EFFECTS: adds row for one attribute to the screen with correct spacing
     private void addAttributeRow(JLabel nameLabel, JTextField nameField) {
         mainPanel.add(nameLabel);
@@ -200,6 +211,7 @@ public class GUI extends JFrame {
         mainPanel.add(nameField);
     }
 
+    // MODIFIES: this
     // EFFECTS: updates Pokemon collection
     private void updateList() {
         textArea.setText(list.toString());
@@ -216,6 +228,7 @@ public class GUI extends JFrame {
             clearAttributeFields();
         }
 
+        // MODIFIES: GUI
         // EFFECTS: clears all attribute fields
         private void clearAttributeFields() {
             nameField.setText("");
@@ -247,6 +260,7 @@ public class GUI extends JFrame {
 
     // ActionListener for removeButton
     class RemoveListener implements ActionListener {
+        // MODIFIES: GUI
         // EFFECTS: removes Pokemon with name in removeField
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -266,6 +280,7 @@ public class GUI extends JFrame {
 
     // ActionListener for saveButton
     private class SaveListener implements ActionListener {
+        // MODIFIES: GUI
         // EFFECTS: saves Pokemon collection
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -285,6 +300,7 @@ public class GUI extends JFrame {
     // ActionListener for loadButton
     private class LoadListener implements ActionListener {
         // REQUIRES: list is not empty
+        // MODIFIES: GUI
         // EFFECTS: loads Pokemon collection
         @Override
         public void actionPerformed(ActionEvent e) {
