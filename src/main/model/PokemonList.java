@@ -19,12 +19,14 @@ public class PokemonList implements Writable {
     //EFFECTS: adds pokemon to the list
     public void add(Pokemon pokemon) {
         pokemons.add(pokemon);
+        EventLog.getInstance().logEvent(new Event("Added Pokemon: " + pokemon.getName()));
     }
 
     //MODIFIES: this
     //EFFECTS: removes Pokemon with given name from list, if it is present
     public void remove(String name) {
         pokemons.remove(get(name));
+        EventLog.getInstance().logEvent(new Event("Removed Pokemon: " + name));
     }
 
     //EFFECTS: returns Pokemon with given name, or null if not found

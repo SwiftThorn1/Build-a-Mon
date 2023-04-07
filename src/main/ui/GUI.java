@@ -2,13 +2,14 @@ package ui;
 
 import model.Pokemon;
 import model.PokemonList;
+import model.Event;
+import model.EventLog;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -72,6 +73,7 @@ public class GUI extends JFrame {
         setupContainer();
         add(container);
 
+        setupWindowListener();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -209,6 +211,19 @@ public class GUI extends JFrame {
         mainPanel.add(nameLabel);
         mainPanel.add(Box.createHorizontalStrut(2));
         mainPanel.add(nameField);
+    }
+
+    // MODIFIES: this
+    // EFFECTS: sets up window listener that prints out EventLog when window is closed
+    private void setupWindowListener() {
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                for (Event event : EventLog.getInstance()) {
+                    System.out.println(event);
+                }
+            }
+        });
     }
 
     // MODIFIES: this

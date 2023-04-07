@@ -1,11 +1,11 @@
 {"pokemons": [{
-    "type2": "two",
-    "def": 70,
-    "spa": 60,
-    "spd": 80,
-    "name": "test",
-    "hp": 90,
-    "atk": 80,
-    "spe": 90,
-    "type1": "one"
+    "type2": "m",
+    "def": 90,
+    "spa": 80,
+    "spd": 60,
+    "name": "h",
+    "hp": 80,
+    "atk": 70,
+    "spe": 50,
+    "type1": "l"
 }]}
