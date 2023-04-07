@@ -31,3 +31,9 @@ https://pixabay.com/vectors/pokemon-icon-design-symbol-sign-4657023/)
 - You can save the state of my application by clicking "File" at the top and then "Save"
 - You can reload the state of my application by clicking "File" at the top and then "Load"
  
+## Phase 4: Task 3
+If I were to refactor my design, I would remove the nested classes inside GUI (AddListener, RemoveListener,
+SaveListener, and LoadListener) and instead put the declaration where I add the action listeners to their buttons since
+they don't have enough functionality to warrant a separate class declaration. I would also make the panels in GUI into
+their own classes so that the GUI fulfills the Single Responsibility Principle, since it has many responsibilities at 
+the moment.
