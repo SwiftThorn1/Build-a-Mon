@@ -76,7 +76,6 @@ public class PokemonList implements Writable {
 
     @Override
     public JSONObject toJson() {
-        // from JsonSerializationDemo
         JSONObject json = new JSONObject();
         json.put("pokemons", pokemonsToJson());
         return json;
@@ -84,7 +83,6 @@ public class PokemonList implements Writable {
 
     // EFFECTS: returns pokemons in list as a JSON array
     private JSONArray pokemonsToJson() {
-        // from JsonSerializationDemo
         JSONArray jsonArray = new JSONArray();
 
         for (Pokemon p : pokemons) {

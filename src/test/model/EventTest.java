@@ -8,7 +8,6 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// Code from AlarmSystem
 public class EventTest {
     // amount of time that two events are allowed to be off by in ms
     private static final long TOLERANCE = 15;

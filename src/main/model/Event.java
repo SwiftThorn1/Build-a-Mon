@@ -5,7 +5,6 @@ import java.util.Date;
 
 /**
  * Represents a Pokemon editor event
- * Code from AlarmSystem
  */
 public class Event {
     private static final int HASH_CONSTANT = 13;

@@ -14,7 +14,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 // Graphical user interface that lets user create custom Pokemon
-// Code taken from TrafficLightGUI
 public class GUI extends JFrame {
     private static final String JSON_STORE = "./data/pokemonlist.json";
     private static final ImageIcon IMAGE_ICON = new ImageIcon("./images/image.png");

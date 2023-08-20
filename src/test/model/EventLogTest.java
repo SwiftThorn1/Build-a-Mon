@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for the EventLog class
- * Code from AlarmSystem
  */
 public class EventLogTest {
     private Event e1;

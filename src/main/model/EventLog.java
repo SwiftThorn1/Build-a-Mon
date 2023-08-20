@@ -6,7 +6,6 @@ import java.util.Iterator;
 
 /**
  * Represents a log of Pokemon editor events.
- * Code from AlarmSystem
  */
 
 public class EventLog implements Iterable<Event> {
